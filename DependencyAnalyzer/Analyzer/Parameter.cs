@@ -11,7 +11,7 @@ namespace Analyzer
 
         public Parameter(ParameterDefinition parameterDefinition, ComponentCache componentCache) : base(parameterDefinition.ParameterType, componentCache)
         {
-            Contract.Requires<ArgumentNullException>(parameterDefinition != null);
+            //Contract.Requires<ArgumentNullException>(parameterDefinition != null);
 
             parameter = parameterDefinition;
             cache = componentCache;
@@ -19,7 +19,7 @@ namespace Analyzer
 
         public Parameter(ParameterReference parameterReference, ComponentCache componentCache) : base(parameterReference.ParameterType, componentCache)
         {
-            Contract.Requires<ArgumentNullException>(parameterReference != null);
+            //Contract.Requires<ArgumentNullException>(parameterReference != null);
 
             parameter = parameterReference.Resolve();
             cache = componentCache;

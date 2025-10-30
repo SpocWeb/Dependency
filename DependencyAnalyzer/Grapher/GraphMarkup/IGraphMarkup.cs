@@ -33,7 +33,7 @@ namespace Grapher.GraphMarkup
         /// <returns>Graph representation markup</returns>
         public string Serialize(DelegateVertexAndEdgeListGraph<T, SEquatableEdge<T>> graph, VertexIdentity<T> vertexIdentity)
         {
-            Contract.Requires<ArgumentNullException>(graph != null);
+            //Contract.Requires<ArgumentNullException>(graph != null);
 
             return default(string);
         }

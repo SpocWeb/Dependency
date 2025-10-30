@@ -25,7 +25,7 @@ namespace Analyzer.ReturnTypes
         public AsmReference(AsmReference assemblyReference)
             : this()
         {
-            Contract.Requires<ArgumentNullException>(assemblyReference != null);
+            //Contract.Requires<ArgumentNullException>(assemblyReference != null);
 
             Add(assemblyReference);
         }
@@ -37,7 +37,7 @@ namespace Analyzer.ReturnTypes
         public AsmReference(IEnumerable<IAssembly> assemblies)
             : this()
         {
-            Contract.Requires<ArgumentNullException>(assemblies != null);
+            //Contract.Requires<ArgumentNullException>(assemblies != null);
 
             foreach (var assembly in assemblies)
             {
@@ -59,7 +59,7 @@ namespace Analyzer.ReturnTypes
 
         public void Add(IAssembly referer)
         {
-            Contract.Requires<ArgumentNullException>(referer != null);
+            //Contract.Requires<ArgumentNullException>(referer != null);
 
             if (!ContainsKey(referer))
             {
@@ -69,8 +69,8 @@ namespace Analyzer.ReturnTypes
 
         public void Add(IAssembly referer, IAssembly referenced)
         {
-            Contract.Requires<ArgumentNullException>(referer != null);
-            Contract.Requires<ArgumentNullException>(referenced != null);
+            //Contract.Requires<ArgumentNullException>(referer != null);
+            //Contract.Requires<ArgumentNullException>(referenced != null);
 
             if (!ContainsKey(referer))
             {
@@ -87,8 +87,8 @@ namespace Analyzer.ReturnTypes
 
         public void Add(IAssembly referer, IEnumerable<IAssembly> referenced)
         {
-            Contract.Requires<ArgumentNullException>(referer != null);
-            Contract.Requires<ArgumentNullException>(referenced != null);
+            //Contract.Requires<ArgumentNullException>(referer != null);
+            //Contract.Requires<ArgumentNullException>(referenced != null);
 
             if (!ContainsKey(referer))
             {
@@ -105,7 +105,7 @@ namespace Analyzer.ReturnTypes
 
         public void Add(AsmReference assemblyReference)
         {
-            Contract.Requires<ArgumentNullException>(assemblyReference != null);
+            //Contract.Requires<ArgumentNullException>(assemblyReference != null);
 
             var references = assemblyReference.ToList();
             foreach (var reference in references)
@@ -117,7 +117,7 @@ namespace Analyzer.ReturnTypes
         [Pure]
         public bool ContainsReferer(IAssembly assembly)
         {
-            Contract.Requires<ArgumentNullException>(assembly != null);
+            //Contract.Requires<ArgumentNullException>(assembly != null);
 
             return ContainsKey(assembly);
         }

@@ -18,7 +18,7 @@ namespace ConsoleAnalyzer
         public AssemblyProcessor(string assemblyPath, uint recursionLimit = uint.MaxValue)
         {
             this.recursionLimit = recursionLimit;
-            Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(assemblyPath));
+            //Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(assemblyPath));
 
             logger.Debug($"Parsing assembly: {assemblyPath}");
 

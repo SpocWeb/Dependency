@@ -18,7 +18,7 @@ namespace Grapher.GraphConverter
 
         public AsmReferenceGraphConverter(AsmReference asmReference, IGraphMarkup<IAssembly> markup = null)
         {
-            Contract.Requires<ArgumentNullException>(asmReference != null);
+            //Contract.Requires<ArgumentNullException>(asmReference != null);
 
             this.asmReference = asmReference;
             this.markup = markup ?? new GraphML<IAssembly>();

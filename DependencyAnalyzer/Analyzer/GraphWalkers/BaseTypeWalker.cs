@@ -20,7 +20,7 @@ namespace Analyzer.GraphWalkers
         public BaseTypeWalker(TypeDefinition typeDefinition, ComponentCache componentCache = null)
             : this(componentCache)
         {
-            Contract.Requires<ArgumentNullException>(typeDefinition != null);
+            //Contract.Requires<ArgumentNullException>(typeDefinition != null);
 
             type = typeDefinition;
         }
@@ -28,7 +28,7 @@ namespace Analyzer.GraphWalkers
         public BaseTypeWalker(IType type, ComponentCache componentCache = null)
             : this(componentCache)
         {
-            Contract.Requires<ArgumentNullException>(type != null);
+            //Contract.Requires<ArgumentNullException>(type != null);
 
             this.type = type.TypeDefinition;
         }

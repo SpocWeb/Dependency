@@ -37,8 +37,8 @@ namespace Analyzer
         public Assembly(string path, ComponentCache componentCache = null, IAssemblyReferenceWalker assemblyReferenceWalker = null)
             : this(componentCache, assemblyReferenceWalker)
         {
-            Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(path));
-            Contract.Requires<ArgumentException>(File.Exists(path));
+            //Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(path));
+            //Contract.Requires<ArgumentException>(File.Exists(path));
 
             module = ModuleDefinition.ReadModule(path);
             resolver.AddSearchDirectory(Path.GetDirectoryName(path));
@@ -51,7 +51,7 @@ namespace Analyzer
         public Assembly(AssemblyNameReference assemblyName, ComponentCache componentCache = null, IAssemblyReferenceWalker assemblyReferenceWalker = null)
             : this(componentCache, assemblyReferenceWalker)
         {
-            Contract.Requires<ArgumentNullException>(assemblyName != null);
+            //Contract.Requires<ArgumentNullException>(assemblyName != null);
             Contract.Ensures(module != null);
 
             var asm = resolver.Resolve(assemblyName);
@@ -61,7 +61,7 @@ namespace Analyzer
         public Assembly(ModuleDefinition assembly, ComponentCache componentCache = null, IAssemblyReferenceWalker assemblyReferenceWalker = null)
             : this(componentCache, assemblyReferenceWalker)
         {
-            Contract.Requires<ArgumentNullException>(assembly != null);
+            //Contract.Requires<ArgumentNullException>(assembly != null);
             Contract.Ensures(module != null);
 
             module = assembly;
@@ -75,9 +75,9 @@ namespace Analyzer
         public Assembly(AssemblyNameReference assemblyName, IEnumerable<string> searchDirectories, ComponentCache componentCache = null, IAssemblyReferenceWalker assemblyReferenceWalker = null)
             : this(componentCache, assemblyReferenceWalker)
         {
-            Contract.Requires<ArgumentNullException>(assemblyName != null);
-            Contract.Requires<ArgumentNullException>(searchDirectories != null);
-            Contract.Requires(Contract.ForAll(searchDirectories, d => d != null));
+            //Contract.Requires<ArgumentNullException>(assemblyName != null);
+            //Contract.Requires<ArgumentNullException>(searchDirectories != null);
+            //Contract.Requires(Contract.ForAll(searchDirectories, d => d != null));
             Contract.Ensures(module != null);
 
             foreach (var searchDirectory in searchDirectories)
@@ -183,7 +183,7 @@ namespace Analyzer
         [Pure]
         public static bool IsAssembly(string path, out Exception exception)
         {
-            Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(path));
+            //Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(path));
 
             try
             {

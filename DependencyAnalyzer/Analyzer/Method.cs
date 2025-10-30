@@ -19,8 +19,8 @@ namespace Analyzer
 
         public Method(MethodReference methodReference, ComponentCache componentCache)
         {
-            Contract.Requires<ArgumentNullException>(methodReference != null);
-            Contract.Requires<ArgumentNullException>(componentCache != null);
+            //Contract.Requires<ArgumentNullException>(methodReference != null);
+            //Contract.Requires<ArgumentNullException>(componentCache != null);
 
             method = methodReference.Resolve();
             cache = componentCache;
@@ -28,8 +28,8 @@ namespace Analyzer
 
         public Method(MethodDefinition methodDefinition, ComponentCache componentCache)
         {
-            Contract.Requires<ArgumentNullException>(methodDefinition != null);
-            Contract.Requires<ArgumentNullException>(componentCache != null);
+            //Contract.Requires<ArgumentNullException>(methodDefinition != null);
+            //Contract.Requires<ArgumentNullException>(componentCache != null);
 
             method = methodDefinition;
             cache = componentCache;
@@ -114,7 +114,7 @@ namespace Analyzer
         [Pure]
         private IEnumerable<Type> GetMethodBodyVariables(MethodDefinition method)
         {
-            Contract.Requires<ArgumentNullException>(method != null);
+            //Contract.Requires<ArgumentNullException>(method != null);
 
             if (method.HasBody && method.Body.HasVariables)
             {

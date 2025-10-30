@@ -21,7 +21,7 @@ namespace Analyzer
 
         public Type(TypeDefinition type, ComponentCache componentCache = null, IBaseTypeWalker baseTypeWalker = null)
         {
-            Contract.Requires(type != null);
+            //Contract.Requires(type != null);
             Contract.Ensures(this.type != null);
             Contract.Ensures(this.baseTypeWalker != null);
             Contract.Ensures(this.cache != null);
@@ -34,7 +34,7 @@ namespace Analyzer
         public Type(TypeReference type, ComponentCache componentCache = null, IBaseTypeWalker baseTypeWalker = null)
             :this(type.Resolve(), componentCache, baseTypeWalker)
         {
-            Contract.Requires(type != null);
+            //Contract.Requires(type != null);
         }
 
         public TypeDefinition TypeDefinition => type;

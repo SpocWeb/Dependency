@@ -13,7 +13,7 @@ namespace Analyzer.ReturnTypes
 
         public TypeReferenceCount(IEnumerable<IType> types) : this()
         {
-            Contract.Requires<ArgumentNullException>(types != null);
+            //Contract.Requires<ArgumentNullException>(types != null);
 
             foreach (var type in types)
             {
@@ -23,7 +23,7 @@ namespace Analyzer.ReturnTypes
 
         public void Add(IType key)
         {
-            Contract.Requires<ArgumentNullException>(key != null);
+            //Contract.Requires<ArgumentNullException>(key != null);
 
             if (ContainsKey(key))
             {
@@ -37,7 +37,7 @@ namespace Analyzer.ReturnTypes
 
         public void Add(TypeReferenceCount typeReferenceCount)
         {
-            Contract.Requires<ArgumentNullException>(typeReferenceCount != null);
+            //Contract.Requires<ArgumentNullException>(typeReferenceCount != null);
 
             foreach (var typeRef in typeReferenceCount)
             {
